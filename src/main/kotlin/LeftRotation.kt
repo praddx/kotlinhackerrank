@@ -9,14 +9,14 @@ fun main(args: Array<String>): Unit {
 fun rotateArray(rotationNumber: Int, inputArray: IntArray): IntArray {
 
     var counter = 0
-    var result = IntArray(inputArray.size, {i -> 0})
+    var result = IntArray(inputArray.size)
 
-    for (i in rotationNumber..(inputArray.size - 1) step 1) {
+    for (i in rotationNumber until inputArray.size step 1) {
         result.set(counter, inputArray[i])
         counter++
     }
 
-    for (i in 0..(rotationNumber - 1) step 1) {
+    for (i in 0 until rotationNumber step 1) {
         result.set(counter, inputArray[i])
         counter++
     }
